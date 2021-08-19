@@ -4,25 +4,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String type;
     private String title;
     private String description;
-    private double price;
+    private BigDecimal price;
     private String brand;
     private String size;
     private String category;
-    private String photoUrl;
+
 
     public Product() {
     }
 
-    public Product(String type, String title, String description, double price, String brand, String size, String category, String photoUrl) {
+    public Product(String type, String title, String description, BigDecimal price, String brand, String size, String category, String photoUrl) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -30,10 +31,9 @@ public class Product {
         this.brand = brand;
         this.size = size;
         this.category = category;
-        this.photoUrl = photoUrl;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -49,7 +49,7 @@ public class Product {
         return description;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
@@ -65,11 +65,8 @@ public class Product {
         return category;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -85,7 +82,7 @@ public class Product {
         this.description = description;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -101,7 +98,4 @@ public class Product {
         this.category = category;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
 }
