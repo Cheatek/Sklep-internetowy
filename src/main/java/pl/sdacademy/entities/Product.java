@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -16,14 +18,14 @@ public class Product {
     private String description;
     private BigDecimal price;
     private String brand;
-    private String size;
+    private int size;
     private String category;
 
 
     public Product() {
     }
 
-    public Product(String type, String title, String description, BigDecimal price, String brand, String size, String category, String photoUrl) {
+    public Product(String type, String title, String description, BigDecimal price, String brand, int size, String category, String photoUrl) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -57,7 +59,7 @@ public class Product {
         return brand;
     }
 
-    public String getSize() {
+    public int getSize() {
         return size;
     }
 
@@ -90,12 +92,13 @@ public class Product {
         this.brand = brand;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
     public void setCategory(String category) {
         this.category = category;
     }
+
 
 }
