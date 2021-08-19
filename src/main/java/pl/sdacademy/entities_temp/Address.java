@@ -1,4 +1,4 @@
-package pl.sdacademy.entities;
+package pl.sdacademy.entities_temp;
 
 import javax.persistence.*;
 
