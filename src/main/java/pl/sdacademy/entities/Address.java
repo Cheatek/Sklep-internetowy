@@ -4,9 +4,7 @@ import javax.persistence.*;
 
 @Embeddable
 public class Address {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
     private String street;
     private String houseNumber;
     private String postalCode;
@@ -14,13 +12,6 @@ public class Address {
 
     public Address(){}
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getStreet() {
         return street;
