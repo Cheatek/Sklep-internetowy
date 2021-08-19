@@ -1,33 +1,31 @@
-package pl.sdacademy.Entities;
+package pl.sdacademy.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String email; //login
     private String password;
-    private String address; //tymczasowo string, aż stworzymy klase Address
+    @Embedded
+    private Address address;
 
     public User(){}
 
-    public User(String email, String password, String address) {
+    public User(String email, String password, Address address) {
         this.email = email;
         this.password = password;
         this.address = address;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -47,11 +45,11 @@ public class User {
         this.password = password;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 }
