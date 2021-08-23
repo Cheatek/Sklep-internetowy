@@ -20,7 +20,6 @@ export class ProductsComponent implements OnInit {
     size: '',
     category: ''
   }
-
   ngOnInit(): void {
   }
   onSubmit(): void {
