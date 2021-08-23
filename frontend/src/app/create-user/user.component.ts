@@ -5,7 +5,7 @@ import {User} from "./user";
 import {Address} from "./address";
 
 @Component({
-  selector: 'app-user',
+  selector: 'app-create-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
+   onSubmit(): void {
     this.httpClient
       .post<User>('http://localhost:8080/user', this.user)
       .subscribe(response=> console.log(response))

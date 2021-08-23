@@ -1,0 +1,21 @@
+<h2>Lista użytkowników</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Ulica</th>
+    <th>Nr domu</th>
+    <th>Kod pocztowy</th>
+    <th>Kraj</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let element of users">
+    <td>{{element.email}}</td>
+    <td>{{element.address.street}}</td>
+    <td>{{element.address.houseNumber}}</td>
+    <td>{{element.address.postalCode}}</td>
+    <td>{{element.address.country}}</td>
+  </tr>
+  </tbody>
+</table>
