@@ -3,8 +3,8 @@ export interface Product{
   type: String;
   title: String;
   description: String;
-  price: number;
+  price: String;
   brand: String;
-  size: number;
+  size: String;
   category: String;
 }
