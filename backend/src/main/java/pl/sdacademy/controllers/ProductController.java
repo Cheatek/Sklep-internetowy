@@ -6,7 +6,9 @@ import pl.sdacademy.entities.Product;
 import pl.sdacademy.services.ProductService;
 
 import java.util.List;
+
 @RestController
+@CrossOrigin("http://localhost:4200/")
 public class ProductController {
     private ProductService productService;
 

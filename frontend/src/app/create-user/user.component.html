@@ -1,28 +1,32 @@
-
-<form (ngSubmit)="onSubmit()">
-  <label>
-    Email
-    <input type="text" name="userEmail" [(ngModel)]="user.email">
-  </label>
-  <label>
-    Hasło
-    <input type="password" name="userPassword" [(ngModel)]="user.password">
-  </label>
-  <label>
-    Ulica
-    <input type="text" name="addressStreet" [(ngModel)]="address.street">
-  </label>
-  <label>
-    Nr. domu
-    <input type="text" name="addressHousenumber" [(ngModel)]="address.houseNumber">
-  </label>
-  <label>
-    Kod pocztowy
-    <input type="text" name="addressPostalcode" [(ngModel)]="address.postalCode">
-  </label>
-  <label>
-    Kraj
-    <input type="text" name="addresscountry" [(ngModel)]="address.country">
-  </label>
-  <input type="submit" value="Prześlij">
+<div class="container-md">
+<form class="row g-3" (ngSubmit)="onSubmit()">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" name="userEmail" [(ngModel)]="user.email">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Hasło</label>
+    <input type="password" class="form-control" id="inputPassword4" name="userPassword" [(ngModel)]="user.password">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Ulica</label>
+    <input type="text" class="form-control" id="inputAddress" name="addressStreet" [(ngModel)]="address.street">
+  </div>
+  <div class="col-md-6">
+    <label for="inputHouseNumber" class="form-label">Nr. domu</label>
+    <input type="text" class="form-control" id="inputHouseNumber" name="addressHouseNumber" [(ngModel)]="address.houseNumber">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCountry" class="form-label">Kraj</label>
+    <input type="text" class="form-control" id="inputCountry" name="addressCountry" [(ngModel)]="address.country">
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Kod pocztowy</label>
+    <input type="text" class="form-control" id="inputZip" name="addresssPostalCode" [(ngModel)]="address.postalCode">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Prześlij</button>
+  </div>
 </form>
+</div>
+//

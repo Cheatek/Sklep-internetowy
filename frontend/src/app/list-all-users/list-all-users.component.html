@@ -1,21 +1,23 @@
-<h2>Lista użytkowników</h2>
-<table>
-  <thead>
-  <tr>
-    <th>Email</th>
-    <th>Ulica</th>
-    <th>Nr domu</th>
-    <th>Kod pocztowy</th>
-    <th>Kraj</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let element of users">
-    <td>{{element.email}}</td>
-    <td>{{element.address.street}}</td>
-    <td>{{element.address.houseNumber}}</td>
-    <td>{{element.address.postalCode}}</td>
-    <td>{{element.address.country}}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container-md">
+  <h2>Lista użytkowników</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">Ulica</th>
+      <th scope="col">Nr domu</th>
+      <th scope="col">Kod pocztowy</th>
+      <th scope="col">Kraj</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let element of users">
+      <td>{{element.email}}</td>
+      <td>{{element.address.street}}</td>
+      <td>{{element.address.houseNumber}}</td>
+      <td>{{element.address.postalCode}}</td>
+      <td>{{element.address.country}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

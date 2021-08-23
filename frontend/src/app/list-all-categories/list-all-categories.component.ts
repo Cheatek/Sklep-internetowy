@@ -15,7 +15,7 @@ export class ListAllCategoriesComponent implements OnInit {
   categories: Category[] = [];
   ngOnInit(): void {
     this.httpClient
-      .get<Category[]>('http://localhost:8080/category')
+      .get<Category[]>('http://localhost:8080/getAllCategories')
       .subscribe(responseBody=>
       {
         this.categories = responseBody;
