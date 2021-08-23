@@ -16,16 +16,16 @@ public class Product {
     private String type;
     private String title;
     private String description;
-    private BigDecimal price;
+    private String price;
     private String brand;
-    private int size;
+    private String size;
     private String category;
 
 
     public Product() {
     }
 
-    public Product(String type, String title, String description, BigDecimal price, String brand, int size, String category, String photoUrl) {
+    public Product(String type, String title, String description, String price, String brand, String size, String category, String photoUrl) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -51,7 +51,7 @@ public class Product {
         return description;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
@@ -59,7 +59,7 @@ public class Product {
         return brand;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
@@ -84,7 +84,7 @@ public class Product {
         this.description = description;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String  price) {
         this.price = price;
     }
 
@@ -92,7 +92,7 @@ public class Product {
         this.brand = brand;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
