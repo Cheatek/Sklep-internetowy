@@ -1,0 +1,28 @@
+
+<form (ngSubmit)="onSubmit()">
+  <label>
+    Email
+    <input type="text" name="userEmail" [(ngModel)]="user.email">
+  </label>
+  <label>
+    Hasło
+    <input type="password" name="userPassword" [(ngModel)]="user.password">
+  </label>
+  <label>
+    Ulica
+    <input type="text" name="addressStreet" [(ngModel)]="address.street">
+  </label>
+  <label>
+    Nr. domu
+    <input type="text" name="addressHousenumber" [(ngModel)]="address.houseNumber">
+  </label>
+  <label>
+    Kod pocztowy
+    <input type="text" name="addressPostalcode" [(ngModel)]="address.postalCode">
+  </label>
+  <label>
+    Kraj
+    <input type="text" name="addresscountry" [(ngModel)]="address.country">
+  </label>
+  <input type="submit" value="Prześlij">
+</form>
