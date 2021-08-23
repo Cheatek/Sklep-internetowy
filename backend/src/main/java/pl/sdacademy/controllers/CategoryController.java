@@ -8,6 +8,7 @@ import pl.sdacademy.services.CategoryService;
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:4200/")
 public class CategoryController {
     private CategoryService categoryService;
 
