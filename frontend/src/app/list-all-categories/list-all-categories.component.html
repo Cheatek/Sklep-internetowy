@@ -1,0 +1,15 @@
+<h2>Lista kategorii</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Producent</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let element of categories">
+    <td>{{element.name}}</td>
+    <td>{{element.producent}}</td>
+  </tr>
+  </tbody>
+</table>
