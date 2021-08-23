@@ -9,6 +9,7 @@ import {ProductsComponent} from "./products/products.component";
 import {CategoryComponent} from "./category/category.component";
 import {ListAllCategoriesComponent} from "./list-all-categories/list-all-categories.component";
 import {ListAllUsersComponent} from "./list-all-users/list-all-users.component";
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ListAllUsersComponent} from "./list-all-users/list-all-users.component";
     ProductsComponent,
     CategoryComponent,
     ListAllUsersComponent,
-    ListAllCategoriesComponent
+    ListAllCategoriesComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

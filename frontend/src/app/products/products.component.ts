@@ -20,12 +20,11 @@ export class ProductsComponent implements OnInit {
     size: '',
     category: ''
   }
-
   ngOnInit(): void {
   }
   onSubmit(): void {
     this.httpClient
-      .post<Product>('http://localhost:8080/product', this.product)
+      .post<Product>('http://localhost:8080/addProduct', this.product)
       .subscribe(response=> console.log(response))
   }
 

@@ -16,7 +16,7 @@ export class CategoryComponent implements OnInit {
 
   onSubmit(): void {
     this.httpClient
-      .post<Category>('http://localhost:8080/category', this.category)
+      .post<Category>('http://localhost:8080/addCategory', this.category)
       .subscribe(response=> console.log(response))
   }
 
