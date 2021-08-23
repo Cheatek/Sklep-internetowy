@@ -7,14 +7,16 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ProductsComponent} from "./products/products.component";
 import {CategoryComponent} from "./category/category.component";
+import {ListAllUsersComponent} from "./list-all-users/list-all-users.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserComponent,
-    ProductsComponent,
-    CategoryComponent
-  ],
+    declarations: [
+        AppComponent,
+        UserComponent,
+        ProductsComponent,
+        CategoryComponent,
+        ListAllUsersComponent
+    ],
   imports: [
     BrowserModule,
     FormsModule,
