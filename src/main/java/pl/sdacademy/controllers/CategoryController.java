@@ -1,34 +1,33 @@
 package pl.sdacademy.controllers;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import pl.sdacademy.entities.Category;
-import pl.sdacademy.repositories.CategoryRepository;
+import pl.sdacademy.services.CategoryService;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:4200")
-@RestController
-@RequestMapping("/controller")
+@Controller
 public class CategoryController {
-    private CategoryRepository categoryRepository;
+    private CategoryService categoryService;
 
-    public CategoryController(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
-    }
-
-    @GetMapping
-    public List<Category> getAll() {
-        return categoryRepository.findAll();
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 
     @GetMapping("/{id}")
-    public Category getById(@PathVariable Long id) {
-        return categoryRepository.findById(id)
-                .orElseThrow();
+    public Category getById(@PathVariable long id) {
+        return categoryService.getById(id);
     }
-
-    @PostMapping
-    public Category create(@RequestBody Category category) {
-        return categoryRepository.save(category);
+    @PostMapping("/addCategory")
+    public void add(@RequestBody Category category){
+        categoryService.add(category);
+    }
+    @GetMapping("/getAllCategories")
+    public List<Category> getAll(){
+       return categoryService.getAll();
     }
 }
