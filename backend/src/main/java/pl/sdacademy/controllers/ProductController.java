@@ -7,7 +7,7 @@ import pl.sdacademy.services.ProductService;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class ProductController {
     private ProductService productService;
 
