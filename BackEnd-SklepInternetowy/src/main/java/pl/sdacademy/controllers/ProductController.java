@@ -3,12 +3,9 @@ package pl.sdacademy.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.sdacademy.entities.Product;
-import pl.sdacademy.repositories.ProductRepository;
 import pl.sdacademy.services.ProductService;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 public class ProductController {
