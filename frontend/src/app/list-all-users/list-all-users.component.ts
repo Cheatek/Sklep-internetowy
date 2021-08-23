@@ -13,7 +13,7 @@ export class ListAllUsersComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   users: User[] = [];
-
+//
   ngOnInit(): void {
     this.httpClient
       .get<User[]>('http://localhost:8080/user')
