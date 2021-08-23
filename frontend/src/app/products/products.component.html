@@ -1,5 +1,5 @@
 <h2>Product</h2>
-<form (ngSubmit)=unsuscribeProduct()>
+<form (ngSubmit)=onSubmit()>
   <div>
     Type:
     <input type="text" name="typeOfProduct" [(ngModel)]="product.type">
@@ -30,28 +30,5 @@
   </div>
   <input type="submit" name="Dodaj">
 </form>
-<table>
-  <thead>
-  <tr>
-    <th>Type</th>
-    <th>Category</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Brand</th>
-    <th>Size</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let product of productArray">
-    <td>{{product.type}}</td>
-    <td>{{product.category}}</td>
-    <td>{{product.title}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.productPrice}}</td>
-    <td>{{product.brand}}</td>
-    <td>{{product.size}}</td>
-  </tr>
-  </tbody>
-</table>
+
 
