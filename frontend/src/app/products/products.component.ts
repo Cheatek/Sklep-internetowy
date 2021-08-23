@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
     size: '',
     category: ''
   }
+  productArray: any[] = [];
 
   ngOnInit(): void {
   }
@@ -27,6 +28,11 @@ export class ProductsComponent implements OnInit {
     this.httpClient
       .post<Product>('http://localhost:8080/product', this.product)
       .subscribe(response=> console.log(response))
+  }
+  unsuscribeProduct(): void {
+    const product = {...this.product};
+    this.productArray.push(product);
+    console.log(this.productArray);
   }
 
 }

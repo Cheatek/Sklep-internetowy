@@ -8,12 +8,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {ProductsComponent} from "./products/products.component";
 import {CategoryComponent} from "./category/category.component";
 
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     ProductsComponent,
-    CategoryComponent
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,25 +1,57 @@
 <h2>Product</h2>
-<form (ngSubmit)=onSubmit()>
+<form (ngSubmit)=unsuscribeProduct()>
   <div>
-   Type: <input type="text" name="typeOfProduct" [(ngModel)]="product.type">
-    </div>
-      <div>
-      Category:<input type="text" name="categoryOfProducts" [(ngModel)]="product.category">
-    </div>
-  <div>
-   Title: <input type="text" name="title" [(ngModel)]="product.title">
+    Type:
+    <input type="text" name="typeOfProduct" [(ngModel)]="product.type">
   </div>
   <div>
-   Description: <textarea [(ngModel)]="product.description"></textarea>
+    Category:
+    <input type="text" name="categoryOfProducts" [(ngModel)]="product.category">
   </div>
   <div>
-   Price: <input type="text" name="price" [(ngModel)]="product.price">
+    Title:
+    <input type="text" name="title" [(ngModel)]="product.title">
   </div>
   <div>
-   Brand: <input type="text" name="brand" [(ngModel)]="product.brand">
+    Description:
+    <textarea [(ngModel)]="product.description"></textarea>
   </div>
   <div>
-  Size:  <input type="text" name="size" [(ngModel)]="product.size">
+    Price:
+    <input type="text" name="price" [(ngModel)]="product.price">
   </div>
-  <input type="submit" name="Dodaj produkt">
+  <div>
+    Brand:
+    <input type="text" name="brand" [(ngModel)]="product.brand">
+  </div>
+  <div>
+    Size:
+    <input type="text" name="size" [(ngModel)]="product.size">
+  </div>
+  <input type="submit" name="Dodaj">
 </form>
+<table>
+  <thead>
+  <tr>
+    <th>Type</th>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Brand</th>
+    <th>Size</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of productArray">
+    <td>{{product.type}}</td>
+    <td>{{product.category}}</td>
+    <td>{{product.title}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.productPrice}}</td>
+    <td>{{product.brand}}</td>
+    <td>{{product.size}}</td>
+  </tr>
+  </tbody>
+</table>
+
