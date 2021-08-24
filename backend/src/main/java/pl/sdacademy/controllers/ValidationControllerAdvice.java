@@ -24,5 +24,6 @@ public class ValidationControllerAdvice {
                         FieldError::getField,
                         Collectors.mapping(FieldError::getDefaultMessage, Collectors.toSet())
                 ));
+
     }
 }
