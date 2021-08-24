@@ -1,7 +1,11 @@
-
 <app-create-user></app-create-user>
 <app-list-all-users></app-list-all-users>
 <app-category></app-category>
 <app-list-all-categories></app-list-all-categories>
 <app-products></app-products>
-<app-product-list></app-product-list>
+<div class="container-md">
+  <ul>
+    <li><a routerLink="lista-produktów">Lista produktów</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

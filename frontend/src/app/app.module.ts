@@ -10,7 +10,12 @@ import {CategoryComponent} from "./category/category.component";
 import {ListAllCategoriesComponent} from "./list-all-categories/list-all-categories.component";
 import {ListAllUsersComponent} from "./list-all-users/list-all-users.component";
 import {ProductListComponent} from "./product-list/product-list.component";
+import {RouterModule, Routes} from "@angular/router";
 
+const routes: Routes = [{
+  path: 'lista-produktów',
+  component: ProductListComponent
+}]
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,8 @@ import {ProductListComponent} from "./product-list/product-list.component";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
