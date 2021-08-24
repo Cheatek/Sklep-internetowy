@@ -2,15 +2,15 @@
   <div class="row g-4">
     <h2>Dodaj produkt</h2>
   </div>
-  <form class="row g-3">
+  <form class="row g-3" (ngSubmit)="onSubmit()">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Typ produktu</label>
       <input type="email" class="form-control" id="inputEmail4" name="productType" [(ngModel)]="product.type">
     </div>
     <div class="col-md-4">
       <label for="inputCategory" class="form-label">Kategoria</label>
-      <select id="inputCategory" class="form-select" name="productCategory">
-        <option *ngFor="let categories of categories" [value]="categories.name">{{categories.name}}</option>
+      <select id="inputCategory" class="form-select" name="productCategory" [(ngModel)]="product.category">
+        <option *ngFor="let categories of categories" [value]="categories.name" >{{categories.name}}</option>
       </select>
     </div>
     <div class="col-12">
@@ -28,13 +28,13 @@
     </div>
     <div class="col-md-4">
       <label for="inputBrand" class="form-label">Marka</label>
-      <select id="inputBrand" class="form-select" name="productBrand" >
-        <option *ngFor="let categories of categories" [value]="categories.producent">{{categories.producent}}</option>
+      <select id="inputBrand" class="form-select" name="productBrand" [(ngModel)]="product.brand" >
+        <option *ngFor="let categories of categories" [value]="categories.producent" >{{categories.producent}}</option>
       </select>
     </div>
     <div class="col-md-4">
       <label for="inputSize" class="form-label">Rozmiar</label>
-      <select id="inputSize" class="form-select" name="productBrand">
+      <select id="inputSize" class="form-select" name="productBrand" [(ngModel)]="product.size">
         <option value="40">40</option>
         <option value="41">41</option>
         <option value="42">42</option>
