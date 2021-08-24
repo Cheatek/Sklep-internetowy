@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClient
-      .get<Product[]>('http://localhost:8080/products')
+      .get<Product[]>('http://localhost:8080/getAllProducts')
       .subscribe(responseBody => {
         this.productArray = responseBody;
       })
