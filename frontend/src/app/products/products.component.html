@@ -28,7 +28,7 @@
     </div>
     <div class="col-md-4">
       <label for="inputBrand" class="form-label">Marka</label>
-      <select id="inputBrand" class="form-select" name="productBrand">
+      <select id="inputBrand" class="form-select" name="productBrand" >
         <option *ngFor="let categories of categories" [value]="categories.producent">{{categories.producent}}</option>
       </select>
     </div>
