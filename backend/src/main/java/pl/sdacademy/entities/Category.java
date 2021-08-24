@@ -2,6 +2,8 @@ package pl.sdacademy.entities;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -9,7 +11,11 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(max = 20, message = "Nazwa może posiadać maksymalnie {max} liter")
+    @NotEmpty
     private String name;
+    @Size(max = 30, message = "Producent może posiadać maksymalnie {max} liter")
+    @NotEmpty
     private String producent;
 
     public Category() {
@@ -32,6 +38,7 @@ public class Category {
     public String getProducent() {
         return producent;
     }
+
 
     public void setId(Long id) {
         this.id = id;
