@@ -1,11 +1,13 @@
 package pl.sdacademy.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.sdacademy.entities.Product;
 import pl.sdacademy.services.ProductService;
 
 import java.util.List;
+
 
 @RestController
 @CrossOrigin("http://localhost:4200/")
@@ -21,7 +23,7 @@ public class ProductController {
         return productService.getById(id);
     }
     @PostMapping("/addProduct")
-    public void add(@RequestBody Product product){
+    public void add(@RequestBody @Validated Product product){
         productService.add(product);
     }
     @GetMapping("/getAllProducts")

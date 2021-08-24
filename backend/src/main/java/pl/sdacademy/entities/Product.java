@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +16,26 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(max = 30, message = "Typ może mieć maksymalnie {max} liter")
+    @NotEmpty
     private String type;
+    @Size(max = 30, message = "Tytuł może mieć maksymalnie {max} liter")
+    @NotEmpty
     private String title;
+    @Size(max = 245, message = "Opis może mieć maksymalnie {max} liter")
+    @NotEmpty
     private String description;
+    @Pattern(regexp = "[1-10000]",message = "Cena może mieć wartość w zakresie {regexp}")
+    @NotEmpty
     private String price;
+    @Size(max= 30, message = "Marka nie może mieć więcej niż {max} liter")
+    @NotEmpty
     private String brand;
+    @Pattern(regexp = "[0-50]", message = "Rozmiar może mieć wartość z zakresu {regexp}")
+    @NotEmpty
     private String size;
+    @Size(max=30, message = "Marka nie może mieć więcej niż {max} liter")
     private String category;
-
 
     public Product() {
     }
