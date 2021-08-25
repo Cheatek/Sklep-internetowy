@@ -26,7 +26,7 @@ public class Product {
     @Max(value = 10000,message = "Cena może mieć maksymalną wartość {value}")
     @Min(value = 1,message = "Minimalna wartość wynosi 1")
     @NotNull
-    private int price;
+    private String price;
     @Size(max= 20, message = "Marka nie może mieć więcej niż {max} liter")
     @NotNull(message = "Pole nie może być puste")
     private String brand;
