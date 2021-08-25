@@ -13,9 +13,19 @@ import {ProductListComponent} from "./product-list/product-list.component";
 import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [{
-  path: 'lista-produktów',
+  path: 'productList',
   component: ProductListComponent
-}]
+},{
+  path: 'createUser',
+  component: UserComponent
+},{
+  path: 'createCategory',
+  component: CategoryComponent
+},{
+  path: 'createProduct',
+  component: ProductsComponent
+}
+]
 @NgModule({
   declarations: [
     AppComponent,
