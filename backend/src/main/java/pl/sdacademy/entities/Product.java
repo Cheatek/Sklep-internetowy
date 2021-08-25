@@ -25,13 +25,13 @@ public class Product {
     @Size(max = 245, message = "Opis może mieć maksymalnie {max} liter")
     @NotEmpty
     private String description;
-    @Pattern(regexp = "[1-10000]",message = "Cena może mieć wartość w zakresie {regexp}")
+
     @NotEmpty
     private String price;
     @Size(max= 30, message = "Marka nie może mieć więcej niż {max} liter")
     @NotEmpty
     private String brand;
-    @Pattern(regexp = "[0-50]", message = "Rozmiar może mieć wartość z zakresu {regexp}")
+
     @NotEmpty
     private String size;
     @Size(max=30, message = "Marka nie może mieć więcej niż {max} liter")
