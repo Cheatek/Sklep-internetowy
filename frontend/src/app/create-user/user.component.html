@@ -3,28 +3,57 @@
   <form class="row g-3" (ngSubmit)="onSubmit()">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" name="userEmail" [(ngModel)]="user.email">
+      <input type="email" class="form-control" id="inputEmail4" name="userEmail" [(ngModel)]="user.email"
+             [class.is-valid]="validationErrors && !validationErrors.email"
+             [class.is-invalid]="validationErrors && validationErrors.email">
+      <ng-container *ngIf="validationErrors && validationErrors.email">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors.email">{{error}}</div>
+      </ng-container>
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Hasło</label>
-      <input type="password" class="form-control" id="inputPassword4" name="userPassword" [(ngModel)]="user.password">
+      <input type="password" class="form-control" id="inputPassword4" name="userPassword" [(ngModel)]="user.password"
+             [class.is-valid]="validationErrors && !validationErrors.password"
+             [class.is-invalid]="validationErrors && validationErrors.password">
+      <ng-container *ngIf="validationErrors && validationErrors.password">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors.password">{{error}}</div>
+      </ng-container>
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Ulica</label>
-      <input type="text" class="form-control" id="inputAddress" name="addressStreet" [(ngModel)]="address.street">
+      <input type="text" class="form-control" id="inputAddress" name="addressStreet" [(ngModel)]="address.street"
+             [class.is-valid]="validationErrors &&  !validationErrors['address.street']"
+             [class.is-invalid]="validationErrors &&  validationErrors['address.street']">
+      <ng-container *ngIf="validationErrors && validationErrors['address.street']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['address.street']">{{error}}</div>
+      </ng-container>
     </div>
     <div class="col-md-6">
       <label for="inputHouseNumber" class="form-label">Nr. domu</label>
-      <input type="text" class="form-control" id="inputHouseNumber" name="addressHouseNumber"
-             [(ngModel)]="address.houseNumber">
+      <input type="text" class="form-control" id="inputHouseNumber" name="addressHouseNumber" [(ngModel)]="address.houseNumber"
+             [class.is-valid]="validationErrors &&  !validationErrors['address.houseNumber']"
+             [class.is-invalid]="validationErrors &&  validationErrors['address.houseNumber']">
+      <ng-container *ngIf="validationErrors && validationErrors['address.houseNumber']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['address.houseNumber']">{{error}}</div>
+      </ng-container>
     </div>
     <div class="col-md-6">
       <label for="inputCountry" class="form-label">Kraj</label>
-      <input type="text" class="form-control" id="inputCountry" name="addressCountry" [(ngModel)]="address.country">
+      <input type="text" class="form-control" id="inputCountry" name="addressCountry" [(ngModel)]="address.country"
+             [class.is-valid]="validationErrors &&  !validationErrors['address.country']"
+             [class.is-invalid]="validationErrors &&  validationErrors['address.country']">
+      <ng-container *ngIf="validationErrors && validationErrors['address.country']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['address.country']">{{error}}</div>
+      </ng-container>
     </div>
     <div class="col-md-2">
       <label for="inputZip" class="form-label">Kod pocztowy</label>
-      <input type="text" class="form-control" id="inputZip" name="addresssPostalCode" [(ngModel)]="address.postalCode">
+      <input type="text" class="form-control" id="inputZip" name="addresssPostalCode" [(ngModel)]="address.postalCode"
+             [class.is-valid]="validationErrors &&  !validationErrors['address.postalCode']"
+             [class.is-invalid]="validationErrors &&  validationErrors['address.postalCode']">
+      <ng-container *ngIf="validationErrors && validationErrors['address.postalCode']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['address.postalCode']">{{error}}</div>
+      </ng-container>
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Prześlij</button>

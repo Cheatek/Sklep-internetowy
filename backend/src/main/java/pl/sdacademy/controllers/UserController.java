@@ -1,5 +1,6 @@
 package pl.sdacademy.controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.sdacademy.entities.User;
@@ -27,6 +28,7 @@ public class UserController {
     }
 
     @PostMapping("/user")
+    @ResponseStatus(HttpStatus.OK)
     public User addUser(@RequestBody @Validated User user){
         return userService.addUser(user);
     }

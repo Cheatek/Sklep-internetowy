@@ -2,6 +2,7 @@ package pl.sdacademy.entities;
 
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -27,6 +28,7 @@ public class User {
             (?=\S+$)          # no whitespace allowed in the entire string
             .{6,}             # anything, at least eight places though
     $                 # end-of-string*/
+    @Valid
     @Embedded
     private Address address;
 

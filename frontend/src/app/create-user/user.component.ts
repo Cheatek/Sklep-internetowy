@@ -16,11 +16,14 @@ export class UserComponent implements OnInit {
   user: User = {email: '', password: '', address: this.address};
   ngOnInit(): void {
   }
-
+  validationErrors: any = null;
    onSubmit(): void {
     this.httpClient
       .post<User>('http://localhost:8080/user', this.user)
-      .subscribe(response=> console.log(response))
+      .subscribe(response=> console.log(response), responseErrors=>{
+        this.validationErrors=responseErrors.error;
+        console.log(responseErrors.error);
+      });
   }
 
 }
