@@ -4,9 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,25 +14,27 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(max = 30, message = "Typ może mieć maksymalnie {max} liter")
-    @NotEmpty
+    @Size(max = 15, message = "Typ może mieć maksymalnie {max} liter")
+    @NotEmpty(message = "Pole nie może być puste")
     private String type;
-    @Size(max = 30, message = "Tytuł może mieć maksymalnie {max} liter")
-    @NotEmpty
+    @Size(max = 20, message = "Tytuł może mieć maksymalnie {max} liter")
+    @NotEmpty(message = "Pole nie może być puste")
     private String title;
-    @Size(max = 245, message = "Opis może mieć maksymalnie {max} liter")
-    @NotEmpty
+    @Size(max = 100, message = "Opis może mieć maksymalnie {max} liter")
+    @NotEmpty(message = "Pole nie może być puste")
     private String description;
-
-    @NotEmpty
-    private String price;
-    @Size(max= 30, message = "Marka nie może mieć więcej niż {max} liter")
-    @NotEmpty
+    @Max(value = 10000,message = "Cena może mieć maksymalną wartość {value}")
+    @Min(value = 1,message = "Minimalna wartość wynosi 1")
+    @NotNull
+    private int price;
+    @Size(max= 20, message = "Marka nie może mieć więcej niż {max} liter")
+    @NotNull(message = "Pole nie może być puste")
     private String brand;
 
     @NotEmpty
     private String size;
-    @Size(max=30, message = "Marka nie może mieć więcej niż {max} liter")
+    @Size(max=20, message = "Marka nie może mieć więcej niż {max} liter")
+    @NotNull(message = "Pole nie może być puste")
     private String category;
 
     public Product() {

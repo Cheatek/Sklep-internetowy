@@ -1,5 +1,6 @@
 package pl.sdacademy.controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,8 @@ public class ProductController {
         return productService.getById(id);
     }
     @PostMapping("/addProduct")
-    public void add(@RequestBody @Validated Product product){
-        productService.add(product);
+    public Product add (@RequestBody @Validated Product product){
+        return productService.add(product);
     }
     @GetMapping("/getAllProducts")
     public List<Product> getAll(){
