@@ -13,11 +13,14 @@ export class CategoryComponent implements OnInit {
   category: Category = {name: '', producent: ''};
   ngOnInit(): void {
   }
-
+  validationErrors: any = null;
   onSubmit(): void {
+    console.log('Zatwierdzono formularz. Kategoria zapisana na serwerze:');
     this.httpClient
       .post<Category>('http://localhost:8080/addCategory', this.category)
-      .subscribe(response=> console.log(response))
+      .subscribe(response=> console.log(response), responseErrors=>{
+        this.validationErrors=responseErrors.error;
+        console.log(responseErrors.error);
+      });
   }
-
 }
