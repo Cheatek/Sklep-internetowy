@@ -5,36 +5,80 @@
   <form class="row g-3" (ngSubmit)="onSubmit()">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Typ produktu</label>
-      <input type="email" class="form-control" id="inputEmail4" name="productType" [(ngModel)]="product.type">
+      <input type="email" class="form-control" id="inputEmail4" name="productType" [(ngModel)]="product.type"
+             [class.is-valid]="validationErrors && !validationErrors.type"
+             [class.is-invalid]="validationErrors && validationErrors.type">
+      <ng-container *ngIf="validationErrors && validationErrors.type">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors.type">
+          {{error}}
+        </div>
+      </ng-container>
     </div>
     <div class="col-md-4">
       <label for="inputCategory" class="form-label">Kategoria</label>
       <select id="inputCategory" class="form-select" name="productCategory" [(ngModel)]="product.category">
-        <option *ngFor="let categories of categories" [value]="categories.name" >{{categories.name}}</option>
+        <option *ngFor="let categories of categories" [value]="categories.name"
+                [class.is-valid]="validationErrors && !validationErrors.category"
+                [class.is-invalid]="validationErrors && validationErrors.category">{{categories.name}}</option>
       </select>
+      <ng-container *ngIf="validationErrors && validationErrors.category">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors.category">
+          {{error}}
+        </div>
+      </ng-container>
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Tytuł</label>
-      <input type="text" class="form-control" id="inputAddress" name="productTitle" [(ngModel)]="product.title">
+      <input type="text" class="form-control" id="inputAddress" name="productTitle" [(ngModel)]="product.title"
+             [class.is-valid]="validationErrors && !validationErrors.title"
+             [class.is-invalid]="validationErrors && validationErrors.title">
+      <ng-container *ngIf="validationErrors && validationErrors.title">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors.title">
+          {{error}}
+        </div>
+      </ng-container>
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Opis produktu</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="productDescription"
-                [(ngModel)]="product.description"></textarea>
+                [(ngModel)]="product.description"
+                [class.is-valid]="validationErrors && !validationErrors.description"
+                [class.is-invalid]="validationErrors && validationErrors.description"></textarea>
+      <ng-container *ngIf="validationErrors && validationErrors.description">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors.description">
+          {{error}}
+        </div>
+      </ng-container>
     </div>
     <div class="col-md-6">
       <label for="inputPrice" class="form-label">Cena</label>
-      <input type="number" class="form-control" id="inputPrice" name="productPrice" [(ngModel)]="product.price">
+      <input type="number" class="form-control" id="inputPrice" [(ngModel)]="product.price" name="inputPrice"
+             [class.is-valid]="validationErrors && !validationErrors.price"
+             [class.is-invalid]="validationErrors && validationErrors.price">
+      <ng-container *ngIf="validationErrors && validationErrors['product.price']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['product.price']">
+          {{error}}
+        </div>
+      </ng-container>
     </div>
     <div class="col-md-4">
       <label for="inputBrand" class="form-label">Marka</label>
-      <select id="inputBrand" class="form-select" name="productBrand" [(ngModel)]="product.brand" >
-        <option *ngFor="let categories of categories" [value]="categories.producent" >{{categories.producent}}</option>
+      <select id="inputBrand" class="form-select" name="brand" [(ngModel)]="product.brand">
+        <option *ngFor="let categories of categories" [value]="categories.producent"
+                [class.is-valid]="validationErrors && !validationErrors['categories.producent']"
+                [class.is-invalid]="validationErrors && validationErrors['categories.producent']">{{categories.producent}}</option>
       </select>
+      <ng-container *ngIf="validationErrors && validationErrors['categories.producent']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['categories.producent']">
+          {{error}}
+        </div>
+      </ng-container>
     </div>
     <div class="col-md-4">
       <label for="inputSize" class="form-label">Rozmiar</label>
-      <select id="inputSize" class="form-select" name="productBrand" [(ngModel)]="product.size">
+      <select id="inputSize" class="form-select" name="productBrand" [(ngModel)]="product.size"
+              [class.is-valid]="validationErrors && !validationErrors.size"
+              [class.is-invalid]="validationErrors && validationErrors.size">
         <option value="40">40</option>
         <option value="41">41</option>
         <option value="42">42</option>
@@ -42,9 +86,14 @@
         <option value="44">44</option>
         <option value="45">45</option>
       </select>
+      <ng-container *ngIf="validationErrors && validationErrors.size">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors.size">
+          {{error}}
+        </div>
+      </ng-container>
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Dodaj</button>
+      <button type="submit" class="btn btn-primary">Prześlij</button>
     </div>
   </form>
 </div>

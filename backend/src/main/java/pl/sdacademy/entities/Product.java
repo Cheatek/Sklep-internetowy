@@ -4,9 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,31 +14,33 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(max = 30, message = "Typ może mieć maksymalnie {max} liter")
-    @NotEmpty
+    @Size(max = 15, message = "Typ może mieć maksymalnie {max} liter")
+    @NotEmpty(message = "Pole nie może być puste")
     private String type;
-    @Size(max = 30, message = "Tytuł może mieć maksymalnie {max} liter")
-    @NotEmpty
+    @Size(max = 20, message = "Tytuł może mieć maksymalnie {max} liter")
+    @NotEmpty(message = "Pole nie może być puste")
     private String title;
-    @Size(max = 245, message = "Opis może mieć maksymalnie {max} liter")
-    @NotEmpty
+    @Size(max = 100, message = "Opis może mieć maksymalnie {max} liter")
+    @NotEmpty(message = "Pole nie może być puste")
     private String description;
-    @Pattern(regexp = "[1-10000]",message = "Cena może mieć wartość w zakresie {regexp}")
-    @NotEmpty
-    private String price;
-    @Size(max= 30, message = "Marka nie może mieć więcej niż {max} liter")
-    @NotEmpty
+    @Max(value = 10000,message = "Cena może mieć maksymalną wartość {value}")
+    @Min(value = 1,message = "Minimalna wartość wynosi 1")
+    @NotNull
+    private int price;
+    @Size(max= 20, message = "Marka nie może mieć więcej niż {max} liter")
+    @NotNull(message = "Pole nie może być puste")
     private String brand;
-    @Pattern(regexp = "[0-50]", message = "Rozmiar może mieć wartość z zakresu {regexp}")
-    @NotEmpty
+    @Pattern(regexp = "[0-50]")
+    @NotEmpty(message = "Pole nie może być puste")
     private String size;
-    @Size(max=30, message = "Marka nie może mieć więcej niż {max} liter")
+    @Size(max=20, message = "Marka nie może mieć więcej niż {max} liter")
+    @NotNull(message = "Pole nie może być puste")
     private String category;
 
     public Product() {
     }
 
-    public Product(String type, String title, String description, String price, String brand, String size, String category, String photoUrl) {
+    public Product(String type, String title, String description, int price, String brand, String size, String category, String photoUrl) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -66,7 +66,7 @@ public class Product {
         return description;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -99,7 +99,7 @@ public class Product {
         this.description = description;
     }
 
-    public void setPrice(String  price) {
+    public void setPrice(int  price) {
         this.price = price;
     }
 
