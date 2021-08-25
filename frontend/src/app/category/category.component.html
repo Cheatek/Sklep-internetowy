@@ -1,17 +1,28 @@
 
 <div class="container-md">
-<form class="row g-3" (ngSubmit)="onSubmit()">
-  <div class="col-md-6">
-    <label for="inputName" class="form-label">Name</label>
-    <input type="text" class="form-control" id="inputName" name="categoryName" [(ngModel)]="category.name">
-  </div>
-  <div></div>
-  <div class="col-md-6">
-    <label for="inputProducent" class="form-label">Producent</label>
-    <input type="text" class="form-control" id="inputProducent" name="categoryProducent" [(ngModel)]="category.producent">
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Prześlij</button>
-  </div>
-</form>
+  <h2>Dodaj kategorie</h2>
+  <form class="row g-3" (ngSubmit)="onSubmit()">
+    <div class="col-md-6">
+      <label for="inputName" class="form-label">Nazwa</label>
+      <input type="text" class="form-control" id="inputName" name="categoryName" [(ngModel)]="category.name"
+             [class.is-valid]="validationErrors &&  !validationErrors['category.name']"
+             [class.is-invalid]="validationErrors &&  validationErrors['category.name']">
+      <ng-container *ngIf="validationErrors && validationErrors['category.name']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['category.name']">{{error}}</div>
+      </ng-container>
+    </div>
+    <div></div>
+    <div class="col-md-6">
+      <label for="inputProducent" class="form-label">Producent</label>
+      <input type="text" class="form-control" id="inputProducent" name="categoryName" [(ngModel)]="category.producent"
+             [class.is-valid]="validationErrors &&  !validationErrors['category.producent']"
+             [class.is-invalid]="validationErrors &&  validationErrors['category.producent']">
+      <ng-container *ngIf="validationErrors && validationErrors['category.producent']">
+        <div class="invalid-feedback" *ngFor="let error of validationErrors['category.producent']">{{error}}</div>
+      </ng-container>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Prześlij</button>
+    </div>
+  </form>
 </div>
