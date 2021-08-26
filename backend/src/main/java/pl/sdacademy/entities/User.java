@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -31,6 +32,8 @@ public class User {
     @Valid
     @Embedded
     private Address address;
+    @OneToMany
+    private Set<Order> order;
 
     public User(){}
 
@@ -70,5 +73,13 @@ public class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Set<Order> getOrder() {
+        return order;
+    }
+
+    public void setOrder(Set<Order> order) {
+        this.order = order;
     }
 }

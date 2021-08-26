@@ -1,33 +1,6 @@
-<!--<div class="container-md">-->
-<!--  <h2>Lista kategorii</h2>-->
 
-<!--  <table class="table table-striped">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th scope="col">Nazwa</th>-->
-<!--      <th scope="col">Producent</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr *ngFor="let element of categories">-->
-<!--      <td>{{element.name}}</td>-->
-<!--      <td>{{element.producent}}</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-<!--</div>-->
+<ul class="list-group position-fixed">
+  <li class="list-group-item active">Kategorie</li>
+  <a href="#" class="list-group-item list-group-item-action" *ngFor="let category of categories">{{category.name}}</a>
+</ul>
 
-<div class="row">
-  <div class="col-2">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-category-list" data-toggle="list" href="#list-category" role="tab" aria-controls="category">Kategorie</a>
-      <a class="list-group-item list-group-item-action" id="list-name-list" data-toggle="list" href="#list-name" role="tab" aria-controls="name">Nazwa</a>
-    </div>
-  </div>
-  <div class="col-2">
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-category" role="tabpanel" aria-labelledby="list-category-list">...</div>
-      <div class="tab-pane fade" id="list-name" role="tabpanel" aria-labelledby="list-name-list">...</div>
-    </div>
-  </div>
-</div>

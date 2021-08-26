@@ -39,6 +39,7 @@ export class ProductsComponent implements OnInit {
       .subscribe(response => console.log(response), responseErrors => {
         this.validationErrors = responseErrors.error;
         console.log(responseErrors.error);
+
       });
 
   }

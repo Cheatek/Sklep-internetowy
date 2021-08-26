@@ -26,11 +26,10 @@ public class Product {
     @Max(value = 10000,message = "Cena może mieć maksymalną wartość {value}")
     @Min(value = 1,message = "Minimalna wartość wynosi 1")
     @NotNull
-    private String price;
+    private BigDecimal price;
     @Size(max= 20, message = "Marka nie może mieć więcej niż {max} liter")
     @NotNull(message = "Pole nie może być puste")
     private String brand;
-
     @NotEmpty
     private String size;
     @Size(max=20, message = "Marka nie może mieć więcej niż {max} liter")
@@ -40,7 +39,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String type, String title, String description, String price, String brand, String size, String category, String photoUrl) {
+    public Product(String type, String title, String description, BigDecimal price, String brand, String size, String category, String photoUrl) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -66,7 +65,7 @@ public class Product {
         return description;
     }
 
-    public String getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
@@ -99,7 +98,7 @@ public class Product {
         this.description = description;
     }
 
-    public void setPrice(String  price) {
+    public void setPrice(BigDecimal  price) {
         this.price = price;
     }
 
