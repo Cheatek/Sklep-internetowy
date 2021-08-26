@@ -9,6 +9,8 @@ import {
 } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Category} from "../category/category";
+import {SharedService} from "../shared.service";
+import {Subscription} from "rxjs";
 
 
 @Component({
@@ -16,9 +18,15 @@ import {Category} from "../category/category";
   templateUrl: './list-all-categories.component.html',
   styleUrls: ['./list-all-categories.component.css']
 })
-export class ListAllCategoriesComponent implements  OnInit {
+export class ListAllCategoriesComponent implements OnInit {
+  clickEventsubscription: Subscription;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private sharedService: SharedService) {
+    this.clickEventsubscription = this.sharedService.getClickEvent().subscribe(() => {
+      this.ngOnInit();
+    })
+  }
+
 
   categories: Category[] = [];
 
@@ -26,10 +34,8 @@ export class ListAllCategoriesComponent implements  OnInit {
   ngOnInit() {
     this.httpClient
       .get<Category[]>('http://localhost:8080/getAllCategories')
-      .subscribe(responseBody=>
-      {
+      .subscribe(responseBody => {
         this.categories = responseBody;
-      this.ngOnInit();
       })
   }
 
