@@ -1,24 +1,17 @@
 <div class="container-lg card-body">
   <h2>Lista produktów</h2>
-  <mat-grid-list cols="4" rowHeight="fit">
-    <mat-card class="example-card border rounded" *ngFor="let product of productArray">
-      <mat-card-header>
-        <mat-card-title>{{product.title}}</mat-card-title>
-        <mat-card-subtitle>{{product.price}} zł</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image
-           src="https://bi.im-g.pl/im/ca/92/e7/z15176394V,Piwo-to-najstarszy-i-najczesciej-spozywany-napoj-a.jpg"
-           alt="photo">
-      <mat-card-content>
 
-        {{product.description}}
-
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Dodaj do koszyka</button>
-        <button mat-button>Szczegóły</button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-list>
+  <div class="card" *ngFor="let product of productArray">
+    <div class="card-body">
+      <h3 class="card-title">{{product.title}}</h3>
+      <h4 class="card-subtitle mb-2 text-muted">{{product.price}} zł </h4>
+      <img src="https://bi.im-g.pl/im/ca/92/e7/z15176394V,Piwo-to-najstarszy-i-najczesciej-spozywany-napoj-a.jpg"
+           class="card-img-top" alt="photo">
+      <p class="card-text">{{product.description}}</p>
+      <div class="btn-toolbar">
+      <a href="#" class="btn btn-primary  btn-sm ">Dodaj do koszyka</a>
+      <a href="#" class="btn btn-primary btn-sm " style = "margin-left: auto">Szczegóły</a>
+      </div>
+    </div>
+  </div>
 </div>
-

@@ -1,4 +1,4 @@
-.example-card {
+.card {
   max-width: 300px;
   max-height: 500px;
   margin-bottom: 50px;
@@ -10,10 +10,13 @@
 .mat-card-subtitle{
   color:black;
 }
-.mat-card-content{
-  max-width: 300px;
+.card-text{
+  max-width: 250px;
   word-wrap: break-word;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.card-title{
+  display: inline-grid;
 }
