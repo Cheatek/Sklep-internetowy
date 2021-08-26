@@ -16,8 +16,7 @@ public class OrderLine {
     public OrderLine() {
     }
 
-    public OrderLine(Long id, Product product, int numberOfProducts, BigDecimal price) {
-        this.id = id;
+    public OrderLine(Product product, int numberOfProducts, BigDecimal price) {
         this.product = product;
         this.numberOfProducts = numberOfProducts;
         this.price = price;
