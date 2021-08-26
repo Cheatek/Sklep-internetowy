@@ -36,11 +36,22 @@ export class ProductsComponent implements OnInit {
     console.log('Zatwierdzono formularz. Produkt dodany do listy');
     this.httpClient
       .post<Product>('http://localhost:8080/addProduct', this.product)
-      .subscribe(response => console.log(response), responseErrors => {
+      .subscribe(response => {
+        console.log(response);
+        this.product.type = '';
+        this.product.title = '';
+        this.product.description = '';
+        this.product.price = 0;
+        this.product.brand = '';
+        this.product.category = '';
+        this.product.size = '';
+      }, responseErrors => {
         this.validationErrors = responseErrors.error;
         console.log(responseErrors.error);
 
+
       });
+
 
   }
 
