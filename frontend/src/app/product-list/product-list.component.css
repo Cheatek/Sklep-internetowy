@@ -1,0 +1,19 @@
+.example-card {
+  max-width: 300px;
+  max-height: 500px;
+  margin-bottom: 50px;
+  display: inline-grid;
+  margin-right: 10px;
+  background-color: #ffffff;
+  color:black;
+}
+.mat-card-subtitle{
+  color:black;
+}
+.mat-card-content{
+  max-width: 300px;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

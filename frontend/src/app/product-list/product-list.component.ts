@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from "../products/product";
 import {HttpClient} from "@angular/common/http";
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',

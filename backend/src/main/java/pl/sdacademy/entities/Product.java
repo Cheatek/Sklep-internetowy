@@ -26,12 +26,12 @@ public class Product {
     @Max(value = 10000,message = "Cena może mieć maksymalną wartość {value}")
     @Min(value = 1,message = "Minimalna wartość wynosi 1")
     @NotNull
-    private int price;
+    private String price;
     @Size(max= 20, message = "Marka nie może mieć więcej niż {max} liter")
     @NotNull(message = "Pole nie może być puste")
     private String brand;
-    @Pattern(regexp = "[0-50]")
-    @NotEmpty(message = "Pole nie może być puste")
+
+    @NotEmpty
     private String size;
     @Size(max=20, message = "Marka nie może mieć więcej niż {max} liter")
     @NotNull(message = "Pole nie może być puste")
@@ -40,7 +40,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String type, String title, String description, int price, String brand, String size, String category, String photoUrl) {
+    public Product(String type, String title, String description, String price, String brand, String size, String category, String photoUrl) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -66,7 +66,7 @@ public class Product {
         return description;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
@@ -99,7 +99,7 @@ public class Product {
         this.description = description;
     }
 
-    public void setPrice(int  price) {
+    public void setPrice(String  price) {
         this.price = price;
     }
 
