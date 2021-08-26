@@ -28,4 +28,10 @@ public class CategoryController {
     public List<Category> getAll(){
        return categoryService.getAll();
     }
+
+
+
 }
+
+
+
