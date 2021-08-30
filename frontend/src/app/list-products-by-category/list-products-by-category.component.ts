@@ -28,7 +28,7 @@ export class ListProductsByCategoryComponent implements OnInit {
         })
     });
 
-
+//
   }
 
 }
