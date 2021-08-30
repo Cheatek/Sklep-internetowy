@@ -23,6 +23,8 @@ export class CategoryComponent implements OnInit {
       .post<Category>('http://localhost:8080/addCategory', this.category)
       .subscribe(response=> {
         console.log(response);
+        this.category.name ='';
+        this.category.producent='';
         this.sharedService.sendClickEvent();
       }, responseErrors=>{
         this.validationErrors=responseErrors.error;
