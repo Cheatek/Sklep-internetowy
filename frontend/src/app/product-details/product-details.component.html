@@ -1,0 +1,14 @@
+<ul class="list-group position-fixed">
+  <li class="list-group-item active">Szczegóły produktu</li>
+
+  <a style="text-decoration: none" *ngFor="let product of productArray" [routerLink]="['productDetails', product.id]" >
+    <li class="list-group-item">{{product.type}}</li>
+    <li class="list-group-item">{{product.title}}</li>
+    <li class="list-group-item">{{product.description}}</li>
+    <li class="list-group-item">{{product.price}}</li>
+    <li class="list-group-item">{{product.brand}}</li>
+    <li class="list-group-item">{{product.size}}</li>
+    <li class="list-group-item">{{product.category}}</li>
+  </a>
+</ul>
+<input type="submit" value="Kup">
