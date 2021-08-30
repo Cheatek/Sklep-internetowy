@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
   }
 
   productArray: Product[] = [];
+  selectedProduct: null;
 
   ngOnInit(): void {
     this.httpClient
