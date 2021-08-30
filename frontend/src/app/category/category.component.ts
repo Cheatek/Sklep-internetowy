@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Category} from "./category";
-import {ListAllCategoriesComponent} from "../list-all-categories/list-all-categories.component";
-import {SharedService} from "../shared.service";
 
 @Component({
 
@@ -12,18 +10,18 @@ import {SharedService} from "../shared.service";
 })
 export class CategoryComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient, private sharedService:SharedService) { }
+  constructor(private httpClient: HttpClient) { }
   category: Category = {name: '', producent: ''};
   ngOnInit(): void {
   }
   validationErrors: any = null;
   onSubmit(): void {
-    console.log('Zatwierdzono formularz. Kategoria zapisana na serwerze:');
     this.httpClient
       .post<Category>('http://localhost:8080/addCategory', this.category)
       .subscribe(response=> {
         console.log(response);
-        this.sharedService.sendClickEvent();
+        this.category.name ='';
+        this.category.producent='';
       }, responseErrors=>{
         this.validationErrors=responseErrors.error;
         console.log(responseErrors.error);
