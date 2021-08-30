@@ -12,9 +12,6 @@ import {ListAllUsersComponent} from "./list-all-users/list-all-users.component";
 import {ProductListComponent} from "./product-list/product-list.component";
 import {RouterModule, Routes} from "@angular/router";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule} from "@angular/material/card";
-import {MatButtonModule} from "@angular/material/button";
-import {MatGridListModule} from "@angular/material/grid-list";
 import { ListProductsByCategoryComponent } from './list-products-by-category/list-products-by-category.component';
 
 const routes: Routes = [{
@@ -52,9 +49,7 @@ const routes: Routes = [{
     HttpClientModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatGridListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
