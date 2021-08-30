@@ -12,7 +12,11 @@ export class ProductsComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) {
   }
-
+  category: Category = {
+    name: '',
+    producent: ''
+  };
+  
   product: Product = {
     type: '',
     title: '',
@@ -20,11 +24,12 @@ export class ProductsComponent implements OnInit {
     price: 0,
     brand: '',
     size: '',
-    category: ''
+    category: this.category
   };
   validationErrors: any = null;
 
   categories: Category[] = [];
+
 
   ngOnInit(): void {
     this.httpClient
@@ -43,7 +48,6 @@ export class ProductsComponent implements OnInit {
         this.product.description = '';
         this.product.price = 0;
         this.product.brand = '';
-        this.product.category = '';
         this.product.size = '';
       }, responseErrors => {
         this.validationErrors = responseErrors.error;

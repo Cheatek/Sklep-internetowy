@@ -23,4 +23,7 @@ public class CategoryService {
     public Category getById(long id){
         return categoryRepository.getById(id);
     }
+    public Category getByName(String name){
+        return categoryRepository.getCategoryByName(name).orElse(null);
+    }
 }

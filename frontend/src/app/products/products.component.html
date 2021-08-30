@@ -15,7 +15,7 @@
     <div class="col-md-4">
       <label for="inputCategory" class="form-label">Kategoria</label>
       <select id="inputCategory" class="form-select" name="productCategory" [(ngModel)]="product.category">
-        <option *ngFor="let categories of categories" [value]="categories.name"
+        <option *ngFor="let categories of categories" [ngValue]="categories"
                 [class.is-valid]="validationErrors && !validationErrors.category"
                 [class.is-invalid]="validationErrors && validationErrors.category">{{categories.name}}</option>
       </select>

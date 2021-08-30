@@ -20,15 +20,21 @@ public class CategoryController {
     public Category getById(@PathVariable long id) {
         return categoryService.getById(id);
     }
+
     @PostMapping("/addCategory")
-    public void add(@RequestBody Category category){
+    public void add(@RequestBody Category category) {
         categoryService.add(category);
     }
+
     @GetMapping("/getAllCategories")
-    public List<Category> getAll(){
-       return categoryService.getAll();
+    public List<Category> getAll() {
+        return categoryService.getAll();
     }
 
+    @GetMapping("/category/name/{name}")
+    public Category getByName(@PathVariable String name) {
+        return categoryService.getByName(name);
+    }
 
 
 }

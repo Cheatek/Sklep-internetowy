@@ -1,0 +1,16 @@
+<div class="container-lg card-body">
+  <h2>Lista produktów</h2>
+  <div class="card" *ngFor="let product of productArray">
+    <div class="card-body">
+      <h3 class="card-title">{{product.title}}</h3>
+      <h4 class="card-subtitle mb-2 text-muted">{{product.price}} zł </h4>
+      <img src="https://bi.im-g.pl/im/ca/92/e7/z15176394V,Piwo-to-najstarszy-i-najczesciej-spozywany-napoj-a.jpg"
+           class="card-img-top" alt="photo">
+      <p class="card-text">{{product.description}}</p>
+      <div class="btn-toolbar">
+        <a href="#" class="btn btn-primary  btn-sm ">Dodaj do koszyka</a>
+        <a href="#" class="btn btn-primary btn-sm " style = "margin-left: auto">Szczegóły</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -23,4 +23,8 @@ public class ProductService {
     public Product getById(long id){
         return productRepository.getById(id);
     }
+
+    public List<Product> getByCategoryId(Long id){
+        return productRepository.getProductsByCategory_Id(id);
+    }
 }

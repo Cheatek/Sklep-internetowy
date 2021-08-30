@@ -1,0 +1,22 @@
+.card {
+  max-width: 300px;
+  max-height: 500px;
+  margin-bottom: 50px;
+  display: inline-grid;
+  margin-right: 10px;
+  background-color: #ffffff;
+  color:black;
+}
+.mat-card-subtitle{
+  color:black;
+}
+.card-text{
+  max-width: 250px;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card-title{
+  display: inline-grid;
+}

@@ -1,3 +1,5 @@
+import {Category} from "../category/category";
+
 export interface Product{
 
   type: String;
@@ -6,5 +8,5 @@ export interface Product{
   price: number;
   brand: String;
   size: String;
-  category: String;
+  category: Category;
 }

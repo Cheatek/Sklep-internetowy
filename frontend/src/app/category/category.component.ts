@@ -13,7 +13,7 @@ import {SharedService} from "../shared.service";
 export class CategoryComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private sharedService:SharedService) { }
-  category: Category = {name: '', producent: ''};
+  category: Category = {id: 0, name: '', producent: ''};
   ngOnInit(): void {
   }
   validationErrors: any = null;

@@ -1,6 +1,7 @@
 
 <ul class="list-group position-fixed">
   <li class="list-group-item active">Kategorie</li>
-  <a href="#" class="list-group-item list-group-item-action" *ngFor="let category of categories">{{category.name}}</a>
+
+  <a style="text-decoration: none" *ngFor="let category of categories" [routerLink]="['listProductsByCategory', category.id]" ><li class="list-group-item">{{category.name}} </li></a>
 </ul>
 

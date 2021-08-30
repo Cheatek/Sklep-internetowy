@@ -1,9 +1,6 @@
 package pl.sdacademy.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -27,19 +24,16 @@ public class Product {
     @Min(value = 1,message = "Minimalna wartość wynosi 1")
     @NotNull
     private BigDecimal price;
-    @Size(max= 20, message = "Marka nie może mieć więcej niż {max} liter")
-    @NotNull(message = "Pole nie może być puste")
     private String brand;
     @NotEmpty
     private String size;
-    @Size(max=20, message = "Marka nie może mieć więcej niż {max} liter")
-    @NotNull(message = "Pole nie może być puste")
-    private String category;
+    @ManyToOne
+    private Category category;
 
     public Product() {
     }
 
-    public Product(String type, String title, String description, BigDecimal price, String brand, String size, String category, String photoUrl) {
+    public Product(String type, String title, String description, BigDecimal price, String brand, String size, Category category, String photoUrl) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -77,7 +71,7 @@ public class Product {
         return size;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
@@ -110,7 +104,7 @@ public class Product {
         this.size = size;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 

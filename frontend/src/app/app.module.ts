@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatGridListModule} from "@angular/material/grid-list";
+import { ListProductsByCategoryComponent } from './list-products-by-category/list-products-by-category.component';
 
 const routes: Routes = [{
   path: 'productList',
@@ -29,6 +30,10 @@ const routes: Routes = [{
   path: 'createProduct',
   component: ProductsComponent
 }
+  ,{
+    path: 'listProductsByCategory/:id',
+    component: ListProductsByCategoryComponent
+  }
 ]
 @NgModule({
   declarations: [
@@ -38,7 +43,8 @@ const routes: Routes = [{
     CategoryComponent,
     ListAllUsersComponent,
     ListAllCategoriesComponent,
-    ProductListComponent
+    ProductListComponent,
+    ListProductsByCategoryComponent
   ],
   imports: [
     BrowserModule,
